@@ -1,11 +1,5 @@
 #!/bin/bash
 
-if [ -f ~/.bashrc ]; then
-	echo "Exists"
-else
-	echo "does not exist"
-fi
-
 DOTFILE_REGEX='^[^.]+$'
 BACKUP_DATE=`date +%Y-%m-%d_%H-%M-%S`
 for f in * ; do
