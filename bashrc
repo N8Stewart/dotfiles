@@ -25,7 +25,7 @@ alias sagi='sudo apt-get install'
 alias rmd='rm -rf'
 alias h='history'
 alias clr='clear'
-alias stdlinux='ssh stewartn@stdlinux.cse.ohio-state.edu'
+alias stdlinux='ssh @stdlinux.cse.ohio-state.edu'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source "$HOME/.rvm/scripts/rvm"
