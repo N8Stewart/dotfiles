@@ -1,0 +1,21 @@
+[user]
+	name = N8Stewart
+	email = Nate.Stewart@gmail.com
+[color]
+	ui = true
+[core]
+	autocrlf = input
+	compression = -1
+	editor = vim
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	r = reset --hard
+[branch]
+	autosetuprebase = always
+[push]
+	default = simple
+[merge]
+	tool = meld
