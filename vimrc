@@ -1,4 +1,4 @@
-" General 
+" General  
 set ai                  " auto indenting
 set history=100         " keep 100 lines of history
 filetype plugin on      " use the file type plugins
