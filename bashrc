@@ -17,20 +17,11 @@ export COLOR_YELLOW='\033[1;33m'
 export COLOR_GRAY='\033[0;30m'
 export COLOR_LIGHT_GRAY='\033[0;37m'
 
-# Export useful aliases to type less and do more
-alias sagg='sudo apt-get upgrade'
-alias sagp='sudo apt-get update'
-alias sag='sudo apt-get update && sudo apt-get upgrade'
-alias sagi='sudo apt-get install'
 alias rmd='rm -rf'
 alias h='history'
 alias clr='clear'
-alias stdlinux='ssh @stdlinux.cse.ohio-state.edu'
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source "$HOME/.rvm/scripts/rvm"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+alias stdlinux='@stdlinux.cse.ohio-state.edu'
+alias oakley='@oakley.osc.edu'
 
 #if id command returns zero, you’ve root access.
 if [ $(id -u) -eq 0 ];
