@@ -17,13 +17,20 @@ export COLOR_YELLOW='\033[1;33m'
 export COLOR_GRAY='\033[0;30m'
 export COLOR_LIGHT_GRAY='\033[0;37m'
 
-alias rmd='rm -rf'
-alias h='history'
-alias clr='clear'
-alias stdlinux='@stdlinux.cse.ohio-state.edu'
-alias oakley='@oakley.osc.edu'
+export WINEARCH='win32'
+export LANG=en_US.utf8 
+export LC_ALL=en_US.utf8
 
-#if id command returns zero, you’ve root access.
+# Setup aliases
+alias h='history'
+alias ls='ls --color=auto'
+alias diff='diff --color=auto'
+alias grep='grep --color=auto' 
+alias pacman='pacman --color=always'
+alias updateMirrors='curl -s "https://www.archlinux.org/mirrorlist/?country=US&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -'
+[[ $- != *i* ]] && return
+
+#if id command returns zero, you have root access.
 if [ $(id -u) -eq 0 ];
 then # you are root, set red colour prompt
 	PS1="\\[$(tput setaf 1)\\]\\u@\\h:\\w #\\[$(tput sgr0)\\]"
@@ -31,3 +38,13 @@ else # normal
 	PS1="\[${COLOR_CYAN}\][\[${COLOR_LIGHT_GREEN}\]\\u\[${COLOR_LIGHT_PURPLE}\]@\[${COLOR_LIGHT_CYAN}\]\\t \[${COLOR_CYAN}\]\\w] $ \[${COLOR_NC}\]"
 fi
 
+# start the ssh-agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
+
+USER_BASE_PATH=$(python -m site --user-base)
+export PATH=$PATH:$USER_BASE_PATH/bin
