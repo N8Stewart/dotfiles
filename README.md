@@ -2,7 +2,6 @@
 Common location to store all of my dotfiles. Feel free to use, but make sure to change the username and email in the gitconfig file.
 
 # TODO after install
-* Put OSU CSE username back into the bashrc aliases
 * Put Github email back into the gitconfig file
 
 # How to use

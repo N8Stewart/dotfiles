@@ -17,5 +17,3 @@
 	autosetuprebase = always
 [push]
 	default = simple
-[merge]
-	tool = meld
